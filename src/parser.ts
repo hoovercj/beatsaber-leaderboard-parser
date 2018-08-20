@@ -62,7 +62,6 @@ export class BeatsaberLeaderboardParser {
         const { id, artist, author, bpm, difficulty, mode, title } = BeatsaberLeaderboardParser.ParseLeaderboardId(leaderboard._leaderboardId);
 
         if (Object.is(data.songs[id], undefined)) {
-            console.log(`Song ${id} is undefined. Initializing now`);
             data.songs[id] = {
                 id,
                 artist,
@@ -119,8 +118,6 @@ export class BeatsaberLeaderboardParser {
                     } as SongDetails,
                 }
             }
-        } else {
-            console.log(`Song ${id} is already defined`);
         }
 
         return BeatsaberLeaderboardParser.reduceSongScores(data, id, difficulty, leaderboard);
@@ -153,7 +150,6 @@ export class BeatsaberLeaderboardParser {
 
             // Require object to be initialized
             if (!songDetails) {
-                console.log(JSON.stringify(_data));
                 throw Error('Song details must be initialized before reducing scores for song');
             }
 
