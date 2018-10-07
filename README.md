@@ -14,7 +14,7 @@ Import
 // index.ts
 import * as fs from 'fs';
 import * as path from 'path';
-import { BeatSaber, BeatsaberLeaderboardParser } from 'beatsaber leaderboard parser`
+import { BeatSaber, BeatsaberLeaderboardParser } from 'beatsaber leaderboard parser'
 
 const scores = fs.readFileSync(path.join(__dirname, 'scores.json')).toString();
 
